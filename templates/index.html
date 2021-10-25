@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is my MVC application</h1>
+    <div class="header-container">
+        <header class="wrapper clearfix">
+            <h2 class="title">This is a test</h2>
+        </header>
+    </div>
+
+    <div class="main-container">
+        <div class="main-container-clearfix">
+            <article>
+                <header>
+                    <form action="" method="post">
+                        <article>
+                            <p>Enter account ID: <input type="text" name="acctid"></p>
+                            <p><button type="submit">Submit</button></p>
+                            {% if acct_balance is not none %}
+                                <p>Account balance: {{ acct_balance }}</p>
+                            {% else %}
+                                <p>Unknown account number; please try again</p>
+                            {% endif %}
+                        </article>
+                    </form>
+                </header>
+            </article>
+        </div>
+    </div>
+    <form action="submit" class="acctid">
+        
+    </form>
+</body>
+</html>
