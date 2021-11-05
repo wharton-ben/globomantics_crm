@@ -21,7 +21,7 @@ def main():
 
     #raise an exception if error
     req_response.raise_for_status()
-    #print(json.dumps(req_response.json(), indent=2))
+    print(json.dumps(req_response.json(), indent=2))
 
     if req_response.ok:
         for device in req_response.json()["response"]:
