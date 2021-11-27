@@ -20,15 +20,15 @@ def main():
     )
 
     #raise an exception if error
-    req_response.raise_for_status()
-    print(json.dumps(req_response.json(), indent=2))
+    #req_response.raise_for_status()
+    #print(json.dumps(req_response.json(), indent=2))
 
     if req_response.ok:
-        for device in req_response.json()["response"]:
-            print(f"ID: {device['id']}   IP: {device['managementIpAddress']}")
+        for result in req_response.json()["response"]:
+            print(f"Device Type: {result['type']}    IP:   {result['managementIpAddress']}  Hostname: {result['hostname']}    Error Description: {result['errorDescription']}")
     else:
         print(f"Device collection failed with code {req_response.status_code}")
-        print(f"Failure body: {req_response.text}")
+        print(f"Failure body {req_response.text}")
 
 if __name__ == "__main__":
     main()

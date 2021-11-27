@@ -44,7 +44,7 @@ def main():
             if not task_data["isError"]:
                 print("New device successfully added")
             else:
-                print(f"Async task error seen: {task_data.status_code}")
+                print(f"Async task error seen: {task_data['progress']}")
         else:
             print(f"Async GET failed. Status code: {task_resp.status_code}")
     else:
